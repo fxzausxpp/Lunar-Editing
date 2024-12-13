@@ -1,0 +1,167 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* So the background can be layered properly */
+}
+
+/* Background Image with Blur Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('indexch.jpg') center/cover no-repeat; /* Set background image */
+    filter: blur(10px); /* Apply blur effect to the background */
+    z-index: -1; /* Ensure it is behind the content */
+}
+
+/* Header Styling (Fixed) */
+header {
+    background: none;
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fffae6; /* Light yellow for a soft hover effect */
+}
+
+/* Content Area */
+.content {
+    margin-top: 6rem;
+    z-index: 2;
+}
+
+/* Intro Text */
+.intro-text h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Button Styling */
+button {
+    background: #e60000; /* Christmas red */
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #2d6a4f; /* Christmas green */
+    transform: translateY(-4px);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.15); /* Slight transparency for frosty effect */
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    width: 100%;
+    border-top: 2px solid #e60000; /* Red border to match the theme */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1rem;
+    color: #fffae6; /* Light soft yellow for text */
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Container to position the button at the bottom */
+.footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Home Button Styling for Christmas Theme */
+#home-button {
+    background: #d32f2f; /* Christmas Red */
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: 2px solid #bb86fc; /* Light purple border for a subtle contrast */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+    margin-bottom: 1rem; /* Add space below the button */
+}
+
+#home-button:hover {
+    background: #388e3c; /* Christmas Green */
+    transform: translateY(-5px); /* Slight lifting effect */
+}

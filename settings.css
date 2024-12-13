@@ -1,0 +1,82 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative; /* Needed for positioning the background */
+}
+
+/* Background Image with Blur Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('indexbg.jpg') center/cover no-repeat; /* Set the background image */
+    filter: blur(10px); /* Apply blur effect to the background */
+    z-index: -1; /* Place it behind the content */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    color: #bb86fc;
+    margin-bottom: 2rem;
+    z-index: 1; /* Ensure header is above the blurred background */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #bb86fc;
+    margin-bottom: 1rem;
+}
+
+/* Settings Content Styling */
+.settings-content {
+    text-align: center;
+    z-index: 1; /* Ensure settings content is above the blurred background */
+}
+
+/* Button Styling */
+.theme-options button {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.theme-options button:hover {
+    background: #bb86fc;
+    color: #121212;
+    transform: translateY(-5px);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: auto;
+    background: rgba(31, 31, 31, 0.8); /* Slight transparency for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid #333333;
+    width: 100%; /* Ensure footer spans the full width */
+    position: relative; /* To position it correctly */
+    z-index: 1; /* Ensure footer is above the blurred background */
+}
