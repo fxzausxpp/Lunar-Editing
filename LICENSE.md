@@ -1,11 +1,17 @@
+### License: Proprietary
+
 Copyright (c) 2024 Lunar Creators
 
-By using this repository, you agree to the following terms:
+This repository is provided for personal or internal use only. You may:
 
-No Modification: You are not permitted to modify, adapt, or create derivative works based on the code in this repository.
+- Use the code for non-commercial purposes.
+- Use the code to create a personal project or prototype.
+  
+You may **NOT**:
 
-No Reuse: You are not allowed to reuse, incorporate, or otherwise utilize any part of the code in this repository for any other projects or applications.
+- Modify or create derivative works based on the code.
+- Redistribute, share, or sell the code.
+- Use the code in commercial applications or products.
 
-No Redistribution: You may not share, distribute, or otherwise make the code available to others, either publicly or privately.
+All rights are reserved by the original author. No part of this code may be used, copied, or shared without explicit permission.
 
-This repository is provided for personal or internal use only. All rights are reserved by the original author. No part of this code may be used, copied, or shared without explicit permission.
