@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to SVG Converter</title>
+    <link rel="stylesheet" href="convert.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.6.0/fabric.min.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SVG Converter</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="content fade-in">
+        <div class="intro-text">
+            <h2>Convert Your Image to SVG</h2>
+            <p>Upload an image to convert it into scalable vector graphics (SVG) format.</p>
+        </div>
+
+        <!-- Image upload & canvas -->
+        <div class="button-container">
+            <input type="file" id="imageInput" />
+            <button id="convertButton">Convert to SVG</button>
+            <!-- Added download button here -->
+            <button id="downloadButton">Download SVG</button>
+        </div>
+
+        <canvas id="canvas" width="600" height="400"></canvas>
+
+        <!-- Display SVG code -->
+        <div class="output-section">
+            <h2>SVG Code:</h2>
+            <textarea id="svgOutput" rows="10" cols="50"></textarea>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Lunar Creators. All Rights Reserved.</p>
+    </footer>
+
+    <script src="convert.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Pattern Background (Blurred) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('indexbg.jpg'); /* Set background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Apply blur effect only to the background */
+    z-index: -1;
+}
+
+/* Header Styling */
+header {
+    background: rgba(31, 31, 31, 0.8); /* Darkened background with transparency */
+    color: #ffffff;
+    padding: 1.5rem 2rem; /* Adjusted padding for a more balanced height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo Styling */
+header .logo {
+    text-align: left;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2rem; /* Slightly smaller font size */
+    color: #bb86fc;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 2.5rem; /* Adjust this value to move the nav further down */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8ab4f8;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #bb86fc;
+}
+
+/* Content Area */
+.content {
+    margin-top: 6rem; /* Adjusted top margin for better spacing */
+    text-align: center;
+    z-index: 1;
+}
+
+/* Intro Text */
+.intro-text {
+    margin-bottom: 2rem;
+}
+
+.intro-text h2 {
+    font-size: 1.8rem; /* Adjusted font size */
+    color: #bb86fc;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.intro-text p {
+    font-size: 1.1rem; /* Slightly smaller font size */
+    color: #8ab4f8;
+    font-weight: 300;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #bb86fc;
+    color: #121212;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: rgba(31, 31, 31, 0.8);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid #333333;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Popup Styling */
+.theme-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+    z-index: 2000;
+}
+
+.theme-popup.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0s 0s;
+}
+
+.popup-content {
+    background: #262626;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.popup-content button {
+    background: #bb86fc;
+    border: none;
+    color: #121212;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.popup-content button:hover {
+    background: #8ab4f8;
+    transform: translateY(-5px);
+}
+
+/* Settings Icon Styling for Basic Theme */
+.settings-icon {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: #8ab4f8;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s, transform 0.3s;
+    z-index: 1100;
+}
+
+.settings-icon:hover {
+    color: #bb86fc;
+    transform: scale(1.1);
+}
+
+.settings-icon i {
+    color: inherit;
+}
