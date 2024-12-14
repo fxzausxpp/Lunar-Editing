@@ -9,16 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const basicThemeButton = document.getElementById("basic-theme");
     const christmasThemeButton = document.getElementById("christmas-theme");
 
+    const themeLink = document.getElementById("theme-style"); // Target the theme stylesheet
+
     // Check if a theme is already stored in localStorage
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-        if (storedTheme === "christmas") {
-            switchToChristmasTheme();
-        } else {
-            switchToBasicTheme();
-        }
+    if (storedTheme === "christmas") {
+        switchToChristmasTheme();
     } else {
-        // Show the theme popup if no preference is saved
+        switchToBasicTheme();
+    }
+
+    // Show the theme popup only if no preference is saved
+    if (!storedTheme) {
         themePopup.classList.add("show");
     }
 
@@ -34,12 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function switchToBasicTheme() {
-        document.querySelector("link[rel='stylesheet']").setAttribute("href", "styles.css");
+        themeLink.setAttribute("href", "styles.css?v=" + Date.now()); // Cache-busting
         localStorage.setItem("theme", "basic");
     }
 
     function switchToChristmasTheme() {
-        document.querySelector("link[rel='stylesheet']").setAttribute("href", "stylesch.css");
+        themeLink.setAttribute("href", "stylesch.css?v=" + Date.now()); // Cache-busting
         localStorage.setItem("theme", "christmas");
     }
 });
