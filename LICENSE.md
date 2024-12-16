@@ -10,5 +10,6 @@ You may:
 You may **NOT**:
 - Use the code for commercial purposes.
 - Redistribute or share the code publicly without prior permission.
+- Sell the code.
 
 All rights are reserved by Lunar Creators. For permissions beyond the scope of this license, explicit written consent is required.
