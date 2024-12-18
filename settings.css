@@ -6,9 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Move content towards the top */
     height: 100vh;
-    position: relative; /* Needed for positioning the background */
+    position: relative;
 }
 
 /* Background Image with Blur Effect */
@@ -19,17 +19,17 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('indexbg.jpg') center/cover no-repeat; /* Set the background image */
-    filter: blur(10px); /* Apply blur effect to the background */
-    z-index: -1; /* Place it behind the content */
+    background: url('indexbg.jpg') center/cover no-repeat;
+    filter: blur(10px);
+    z-index: -1;
 }
 
 /* Header Styling */
 header {
     text-align: center;
     color: #bb86fc;
-    margin-bottom: 2rem;
-    z-index: 1; /* Ensure header is above the blurred background */
+    margin-bottom: 1rem; /* Reduced margin to bring header closer */
+    z-index: 1;
 }
 
 h1 {
@@ -39,13 +39,14 @@ h1 {
 h2 {
     font-size: 1.8rem;
     color: #bb86fc;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* Reduced margin */
 }
 
 /* Settings Content Styling */
 .settings-content {
     text-align: center;
-    z-index: 1; /* Ensure settings content is above the blurred background */
+    z-index: 1;
+    margin-top: 1rem; /* Move settings content up */
 }
 
 /* Button Styling */
@@ -59,7 +60,7 @@ h2 {
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
     font-weight: 600;
-    margin: 1rem;
+    margin: 0.5rem; /* Reduced margin to bring buttons closer */
 }
 
 .theme-options button:hover {
@@ -68,15 +69,171 @@ h2 {
     transform: translateY(-5px);
 }
 
+/* Preferred Format Section */
+.preferred-format {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#format-select {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+#save-button {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 1rem;
+}
+
+#save-button:hover {
+    background: #bb86fc;
+    color: #121212;
+    transform: translateY(-5px);
+}
+
+/* File Level Compressor Section */
+.compression-level {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.compression-level label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e0e0e0; /* Updated to match the first style */
+}
+
+.compression-level select {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.compression-level select:hover {
+    background: #bb86fc; /* Hover effect to match the first style */
+    color: #121212;
+}
+
+#save-compression-button {
+    background-color: #e60000; /* Christmas red */
+    border: 2px solid #333;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#save-compression-button:hover {
+    background-color: #2d6a4f; /* Christmas green */
+    transform: translateY(-4px);
+}
+
+
 /* Footer Styling */
 footer {
     margin-top: auto;
-    background: rgba(31, 31, 31, 0.8); /* Slight transparency for footer */
+    background: rgba(31, 31, 31, 0.8);
     color: #ffffff;
     text-align: center;
     padding: 1.5rem 0;
     border-top: 2px solid #333333;
-    width: 100%; /* Ensure footer spans the full width */
-    position: relative; /* To position it correctly */
-    z-index: 1; /* Ensure footer is above the blurred background */
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Home Button Styling */
+#home-button {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#home-button:hover {
+    background: #bb86fc;
+    color: #121212;
+    transform: translate(-50%, -5px);
+}
+
+.footer-container {
+    position: relative;
+    background: rgba(31, 31, 31, 0.8);
+    padding: 1.5rem 0;
+}
+
+/* Compression Level Section */
+.compression-level {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Compression Level Select Box */
+#compression-level-select {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+/* Save Compression Level Button Styling */
+#save-compression-button {
+    background: #262626;
+    border: 2px solid #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 1rem;
+}
+
+#save-compression-button:hover {
+    background: #bb86fc;
+    color: #121212;
+    transform: translateY(-5px);
 }
