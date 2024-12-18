@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbox</title>
+    <link id="theme-link" rel="stylesheet" href="toolboxch.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.13/dist/browser-image-compression.min.js"></script> <!-- Include the image compression library -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Toolbox</h1>
+        </div>
+    </header>
+
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <!-- File Size Compressor Section -->
+        <section class="tool-card">
+            <h3>File Size Compressor</h3>
+            <input type="file" id="compressFile" accept="image/*">
+            <select id="compressionLevel">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button class="btn" onclick="compressFile()">Compress</button>
+            
+            <p id="beforeSize">Before Size: N/A</p>
+            <p id="afterSize">After Size: N/A</p>
+
+            <div id="compressedImageResult" style="display: none;">
+                <h4>Compressed Image:</h4>
+                <img id="compressedImage" alt="Compressed Image" style="max-width: 100%; height: auto;">
+                <div id="compressedFileDownload"></div>
+            </div>
+        </section>
+
+        <!-- File Type Converter Section -->
+        <section class="tool-card">
+            <h3>File Type Converter</h3>
+            <input type="file" id="converterFile" accept="image/*">
+            <select id="outputFormat">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="gif">GIF</option>
+                <option value="webp">WEBP</option>
+                <option value="bmp">BMP</option>
+            </select>
+            <button class="btn" onclick="convertFile()">Convert</button>
+            
+            <!-- Display converted image -->
+            <div id="convertedImageResult" style="display: none;">
+                <h4>Converted Image:</h4>
+                <canvas id="convertedCanvas" style="max-width: 100%; height: auto;"></canvas>
+            </div>
+
+            <div id="convertedFileDownload"></div>
+        </section>
+
+        <!-- Converted Image Card Section -->
+        <section id="convertedImageCardSection" class="tool-card">
+            <h3>Converted Image</h3>
+        </section>
+
+        <!-- Video Type Converter Section -->
+        <section class="tool-card">
+            <h3>Video Type Converter</h3>
+            <input type="file" id="videoInput">
+            <select id="videoOutputFormat">
+                <option value="mp4">MP4</option>
+                <option value="avi">AVI</option>
+                <option value="mov">MOV</option>
+            </select>
+            <button class="btn" onclick="convertVideo()">Convert</button>
+            <div id="videoDownload"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Lunar Creators. All Rights Reserved.</p>
+    </footer>
+
+    <script src="toolbox.js"></script>
+</body>
+</html>

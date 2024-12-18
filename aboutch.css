@@ -1,0 +1,238 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body takes up the full height and content is stacked correctly */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(145deg, #8e2a84, #2e0b50); /* Red and purple gradient */
+    color: #f5f5f5;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: #c2185b; /* Festive red */
+    border-bottom: 2px solid #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ffd700; /* Gold color for a festive touch */
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.7); /* Glowing text effect */
+}
+
+.header-content p {
+    font-size: 1.2em;
+    color: #d1c4e9;
+}
+
+/* Snowflakes in background */
+body::before {
+    content: '\2744'; /* Unicode snowflake character */
+    font-size: 10em;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: -1;
+    animation: snowflakeAnimation 6s infinite linear;
+}
+
+/* Content Section */
+.content {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 1s;
+    flex-grow: 1; /* Allows content to grow and take up available space */
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    animation: slideInLeft 1s forwards;
+    animation-delay: 1.5s;
+    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.7); /* Glowing effect */
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d1c4e9;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 1.2s forwards;
+    animation-delay: 2s;
+}
+
+/* Footer */
+footer {
+    background: #121212;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 2.5s;
+    font-size: 1.1em;
+    position: fixed; /* Fix the footer to the bottom */
+    bottom: 0; /* Ensures it's at the bottom */
+}
+
+/* Add hover effect for text */
+a {
+    color: #c2185b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffd700; /* Gold hover effect */
+}
+
+/* Animation Definitions */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Snowflake Animation */
+@keyframes snowflakeAnimation {
+    0% {
+        top: 0;
+        left: 5%;
+        opacity: 0.8;
+    }
+    50% {
+        top: 50%;
+        left: 25%;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        left: 5%;
+        opacity: 0.8;
+    }
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #2e8b57; /* Festive green background */
+    padding: 12px 0;
+    width: 100%; /* Make sure it takes the full width */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'); /* Subtle pattern for a festive touch */
+    background-size: cover;
+    position: fixed; /* Fix navbar at the top */
+    top: 0; /* Place it at the very top */
+    left: 0; /* Ensure it spans the full width */
+    z-index: 9999; /* Ensure navbar is on top of other content */
+}
+
+/* Adjusting the content section to provide space for the fixed navbar */
+body > .content {
+    margin-top: 60px; /* Give space so content does not get hidden behind the navbar */
+}
+
+/* Navbar links styles */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #fff; /* White text */
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+/* Hover effects for a more festive touch */
+.navbar ul li a:hover {
+    background-color: #e74c3c; /* Christmas red background */
+    color: #fff;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Active link styling */
+.navbar ul li a:active {
+    background-color: #f39c12; /* Gold when active */
+    color: #fff;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Gold glow on click */
+}
+
+/* Add some small festive decoration effects */
+.navbar ul li a::before {
+    content: '\2744'; /* Snowflake symbol */
+    margin-right: 8px;
+    font-size: 1.5em;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.navbar ul li a:hover::before {
+    color: #f39c12; /* Snowflake turns gold on hover */
+}
+
+/* Add some spacing between nav links */
+.navbar ul li:not(:last-child) {
+    margin-right: 30px;
+}

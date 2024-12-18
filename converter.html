@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to Image Converter</title>
+    <head>
+        <link id="theme-stylesheet" rel="stylesheet" href="convert.css">
+    </head>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>SVG to Image Converter</h1>
+        </div>
+        <!-- Navigation Section -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="creators.html">Creators</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <div class="intro-text">
+            <h2>Convert Your SVG Code to an Image</h2>
+            <p>Paste your SVG code below and click "Convert to Image" to generate an image file.</p>
+        </div>
+
+        <!-- Section to input SVG Code -->
+        <div class="input-section">
+            <textarea id="svgInput" rows="10" cols="50" placeholder="Paste SVG code here"></textarea>
+        </div>
+
+        <!-- Canvas to render the SVG -->
+        <canvas id="canvas" width="600" height="400" style="border: 1px solid #ccc; display: none;"></canvas>
+
+        <!-- Buttons to convert SVG and download image -->
+        <div class="button-container">
+            <button id="convertToImageButton">Convert SVG to Image</button>
+            <button id="downloadImageButton" style="display:none;">Download Image</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Lunar Creators. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="converter.js"></script>
+</body>
+</html>
