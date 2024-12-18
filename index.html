@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunar Editing</title>
+    <!-- Theme stylesheet with an id for targeting -->
     <link id="theme-style" rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
+        <!-- Settings Icon -->
         <a href="settings.html" id="settings-icon" class="settings-icon">
-            <i class="fas fa-cog"></i> 
+            <i class="fas fa-cog"></i> <!-- Font Awesome gear icon -->
         </a>
 
         <nav>
             <ul>
                 <li><a href="about.html">About</a></li>
-                <li><a href="creator.html">Creator</a></li>
+                <li><a href="creators.html">Creator</a></li>
                 <li><a href="discord.html">Discord</a></li>
             </ul>
         </nav>
@@ -32,9 +35,14 @@
         <div class="button-container">
             <button class="button">Presets</button>
             <button class="button">XML</button>
-            <button class="button qr-code">QR Codes</button>
-            <button class="button">Converter</button>
-            <button class="button">Tool Box</button>
+            <a href="qrcodes.html">
+                <button class="button">QR Codes</button>
+            <a href="convert.html">
+                <button class="button">Converter</button>
+            </a>
+            <a href="toolbox.html">
+                <button class="button">ToolBox</button>
+            </a>
             <button class="button">Chat</button>
         </div>
     </div>
